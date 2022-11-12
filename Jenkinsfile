@@ -29,13 +29,21 @@ pipeline {
                   echo 'Deploying to AWS...'
                   withAWS(credentials: 'aws', region: 'us-east-1') {
                       sh "aws eks --region us-east-1 update-kubeconfig --name capstonecluster"
+                      echo '.....Cleared Step 1.........'
                       sh "kubectl config use-context arn:aws:eks:us-east-1:911745291225:cluster/capstonecluster"
+                      echo '.....Cleared Step 2.........'
                       sh "kubectl set image deployments/capstone-project-cloud-devops capstone-project-cloud-devops=Himanshu33/capstone-project-cloud-devops:latest"
+                      echo '.....Cleared Step 3.........'
                       sh "kubectl apply -f deployment/deployment.yml"
+                      echo '.....Cleared Step 4.........'
                       sh "kubectl get nodes"
+                      echo '.....Cleared Step 5.........'
                       sh "kubectl get deployment"
+                      echo '.....Cleared Step 6.........'
                       sh "kubectl get pod -o wide"
+                      echo '.....Cleared Step 7.........'
                       sh "kubectl get service/capstone-project-cloud-devops"
+                      echo '.....Cleared Step 8.........'
                   }
               }
         }
