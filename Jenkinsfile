@@ -28,7 +28,7 @@ pipeline {
               steps{
                   echo 'Deploying to AWS...'
                   withAWS(credentials: 'aws', region: 'us-east-1') {
-                      sh "aws eks --region us-east-1 update-kubeconfig --name capstonecluster"
+                      sh "aws eks --region us-east-1 update-kubeconfig --name capstonecluster --verbose"
                       echo '.....Cleared Step 1.........'
                       sh "kubectl config use-context arn:aws:eks:us-east-1:911745291225:cluster/capstonecluster"
                       echo '.....Cleared Step 2.........'
