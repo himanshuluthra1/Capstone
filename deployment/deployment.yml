@@ -21,7 +21,7 @@ spec:
         app: capstone-project-cloud-devops
     spec:
       containers:
-        - image: himanshuluthra/capstone-project-cloud-devops:v1
+        - image: himanshuluthra/capstone-project-cloud-devops:v2
           imagePullPolicy: Always
           name: capstone-project-cloud-devops
           ports:
