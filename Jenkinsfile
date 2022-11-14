@@ -37,7 +37,7 @@ pipeline {
                       echo '.....Cleared Step 1.........'
                       sh "kubectl config use-context arn:aws:eks:us-east-1:911745291225:cluster/capstonecluster"
                       echo '.....Cleared Step 2.........'
-                      sh "kubectl set image deployments/capstone-project-cloud-devops capstone-project-cloud-devops=himanshuluthra/capstone-project-cloud-devops:latest"
+                      sh "kubectl set image deployments/capstone-project-cloud-devops capstone-project-cloud-devops=himanshuluthra/capstone-project-cloud-devops:v1"
                       echo '.....Cleared Step 3.........'
                       sh "kubectl apply -f deployment/deployment.yml"
                       echo '.....Cleared Step 4.........'
