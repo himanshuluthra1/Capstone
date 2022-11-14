@@ -25,7 +25,7 @@ pipeline {
               steps {
                   withDockerRegistry([url: "", credentialsId: "docker-hub"]) {
                       sh "docker tag capstone-project-cloud-devops:v3 himanshuluthra/capstone-project-cloud-devops"
-                      sh 'docker push himanshuluthra/capstone-project-cloud-devops:v3'
+                      sh 'docker push himanshuluthra/capstone-project-cloud-devops'
                   }
               }
          }
