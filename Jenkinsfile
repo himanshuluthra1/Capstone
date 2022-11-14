@@ -11,6 +11,11 @@ pipeline {
                   sh 'tidy -q -e *.html'
               }
          }
+         stage('Lint Docker File') {
+              steps {
+                  sh 'make lint'
+              }
+         }
          stage('Build Docker Image') {
               steps {
                   sh 'docker build -t capstone-project-cloud-devops .'
