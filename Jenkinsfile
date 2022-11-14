@@ -18,7 +18,7 @@ pipeline {
          }
          stage('Build Docker Image') {
               steps {
-                  sh 'docker build -t capstone-project-cloud-devops -t capstone-project-cloud-devops:v3 .'
+                  sh 'docker build -t capstone-project-cloud-devops:v3 .'
               }
          }
          stage('Push Docker Image') {
